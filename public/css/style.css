@@ -1,0 +1,50 @@
+body {
+    font-family: 'Recursive';
+    background-color: #FB6B6B;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.initial-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.initial-page img {
+    width: 55px;
+    height: 65px;
+    margin-top: 90px;
+}
+
+.title {
+    font-family: 'Righteous';
+    width: auto;
+    height: 35px;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 31px;
+    letter-spacing: -0.012em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.initial-page button {
+    font-family: 'Recursive';
+    margin-top: 70px;
+    width: 141px;
+    height: 31px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #D70900;
+    background: #FFFFFF;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
