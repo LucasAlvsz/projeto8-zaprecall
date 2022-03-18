@@ -1,4 +1,5 @@
 import { render } from "react-dom";
+import { useState } from "react"
 import InitialPage from "./InitalPage";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -29,15 +30,23 @@ function App() {
         question: "Usamos estado (state) para __",
         answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }]
+    const [numCompleted, setNumCompleted] = useState(0)
+    const [statusIcons, setStatusIcon] = useState([])
     return (
         <>
             <Header />
             <main>
                 {/* <InitialPage /> */}
-                <Deck deck={deck} />
+                <Deck
+                    deck={deck}
+                    updateNumCompleted={numCompletedUpdated => setNumCompleted(numCompletedUpdated + numCompleted)}
+                    updateStatusIcon={updateStatusIcon => setStatusIcon([...statusIcons, updateStatusIcon])}
+                />
             </main>
             <Footer
                 numQuestions={deck.length}
+                numCompleted={numCompleted}
+                statusIcons={statusIcons}
             />
         </>
     )

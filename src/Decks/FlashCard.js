@@ -1,7 +1,7 @@
 import { useState } from "react"
-export default function Flashcard({ questionNum, question, answer }) {
+export default function Flashcard({ questionNum, question, answer, updateNumCompleted, updateStatusIcon }) {
     function checkStatus(status) {
-        if (flashCardStatus === "flash-card") {
+        if (status === "flash-card") {
             return (
                 <>
                     <p>Pergunta {questionNum}</p>
@@ -9,7 +9,7 @@ export default function Flashcard({ questionNum, question, answer }) {
                 </>
             )
         }
-        else if (flashCardStatus === "opened-flash-card") {
+        else if (status === "opened-flash-card") {
             return (
                 <>
                     <p>{question}</p>
@@ -20,15 +20,60 @@ export default function Flashcard({ questionNum, question, answer }) {
                 </>
             )
         }
-        else if (flashCardStatus === "turned-flash-card") {
+        else if (status === "turned-flash-card") {
             return (
                 <>
                     <p>{answer}</p>
                     <div className="buttons">
-                        <button>Não lembrei</button>
-                        <button>Quase não lembrei</button>
-                        <button>Zap!</button>
+                        <button onClick={(e) => {
+                            e.stopPropagation()
+                            updateNumCompleted(1)
+                            updateStatusIcon("./imgs/notRemember.svg")
+                            setFlashCardStatus("not-remember")
+                        }}>
+                            Não lembrei
+                        </button>
+                        <button onClick={(e) => {
+                            e.stopPropagation()
+                            updateNumCompleted(1)
+                            updateStatusIcon("./imgs/almostNotRemember.svg")
+                            setFlashCardStatus("almost-not-remember")
+                        }}>
+                            Quase não lembrei
+                        </button>
+                        <button onClick={(e) => {
+                            e.stopPropagation()
+                            updateNumCompleted(1)
+                            updateStatusIcon("./imgs/zap.svg")
+                            setFlashCardStatus("zap")
+                        }}>
+                            Zap!
+                        </button>
                     </div>
+                </>
+            )
+        }
+        else if (status === "not-remember"){
+            return(
+                <>
+                    <p>Pergunta {questionNum}</p>
+                    <img src="./imgs/notRemember.svg" />
+                </>
+            )
+        }
+        else if (status === "almost-not-remember"){
+            return(
+                <>
+                    <p>Pergunta {questionNum}</p>
+                    <img src="./imgs/almostNotRemember.svg" />
+                </>
+            )
+        }
+        else if (status === "zap"){
+            return(
+                <>
+                    <p>Pergunta {questionNum}</p>
+                    <img src="./imgs/zap.svg" />
                 </>
             )
         }
