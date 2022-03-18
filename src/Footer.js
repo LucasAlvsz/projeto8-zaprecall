@@ -1,7 +1,7 @@
-export default function Footer() {
+export default function Footer({ numQuestions }) {
     return (
         <footer>
-            <p>0/4 Concluídos</p>
+            <p>0/{numQuestions} Concluídos</p>
         </footer>
     )
 }

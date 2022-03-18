@@ -5,6 +5,7 @@ body {
 
 * {
     box-sizing: border-box;
+    word-break: break-word;
 }
 
 main {
@@ -126,33 +127,114 @@ footer p {
     margin-bottom: 5px;
     /* superior | direita | inferior | esquerda */
     padding: 13px 13px 13px 6px;
-}
-
-.flash-card p {
-    font-family: 'Recursive';
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #333333;
+    animation: closeFlashCard 0.5s 0.5s both;
 }
 
 .flash-card img {
     width: 13px;
     height: 15px;
+    animation: closeFlashCardImg 0.8s 0.8s both;
 }
 
-.open-flash-card {
+.flash-card p {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333333;
+    animation: closeFlashCardImg 0.8s 0.8s both;
+}
+
+.opened-flash-card {
     width: auto;
     height: 40px;
     display: flex;
     justify-content: space-between;
+    position: relative;
     background: #FFFFFF;
     border-radius: 5px;
     margin-bottom: 5px;
-    /* superior | direita | inferior | esquerda */
-    padding: 13px 13px 13px 6px;
-    animation: openFlashCard 1s 1s both;
+    padding: 13px 6px;
+    animation: openFlashCard 0.5s 0.5s both;
 }
+
+.opened-flash-card img {
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    bottom: 8px;
+    right: 7px;
+    animation: openFlashCardImg 0.8s 0.8s both;
+}
+
+.opened-flash-card p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333333;
+    animation: openFlashCardImg 0.8s 0.8s both;
+}
+
+.turned-flash-card {
+    width: auto;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    height: 80px;
+    background: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    animation: openFlashCard 0.5s 0.5s both;
+}
+
+.turned-flash-card p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333333;
+    margin-top: 5px;
+    margin-left: 6px;
+    animation: closeFlashCardImg 0.5s 0.5s both;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+    margin-bottom: 3px;
+    padding-left: 5px;
+    animation: closeFlashCardImg 0.5s 0.5s both;
+}
+
+.buttons button {
+    width: calc(33%);
+    min-height: 28px;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 8px;
+    color: #FFFFFF;
+    border: none;
+    margin-right: 5px;
+}
+
+.buttons button:nth-child(1) {
+    background-color: #FF3030;
+}
+
+.buttons button:nth-child(2) {
+    background: #FF922E;
+}
+
+.buttons button:nth-child(3) {
+    background: #2FBE34;
+}
+
+
+
 
 @keyframes openFlashCard {
     from {
@@ -165,6 +247,46 @@ footer p {
         height: 80px;
         background: #FFFFD5;
         box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-        border-radius: 5px;
+    }
+}
+
+@keyframes closeFlashCard {
+    from {
+        height: 80px;
+        background: #FFFFD5;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    to {
+        height: 40px;
+        background: #FFFFFF;
+    }
+}
+
+@keyframes closeFlashCardImg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes openFlashCardImg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    from {}
+
+    to {
+        transform: rotate(360deg);
     }
 }
