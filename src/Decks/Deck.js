@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Flashcard from "./FlashCard"
-export default function Deck({ deck, updateNumCompleted, updateStatusIcon }) {
+export default function Deck({ deck, updateNumCompleted, updateStatusIcon, updateNotRememberAmount }) {
     return (
         <div className="deck">
             {deck.map(({ question, answer }, questionNum) => {
@@ -12,6 +12,7 @@ export default function Deck({ deck, updateNumCompleted, updateStatusIcon }) {
                         answer={answer}
                         updateNumCompleted={updateNumCompleted}
                         updateStatusIcon={updateStatusIcon}
+                        updateNotRememberAmount={updateNotRememberAmount}
                     />
                 )
             })

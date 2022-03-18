@@ -2,52 +2,44 @@ import { render } from "react-dom";
 import { useState } from "react"
 import InitialPage from "./InitalPage";
 import Header from "./Header";
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 import Deck from "./Decks/Deck"
 function App() {
-    const deck = [{
-        question: "O que é JSX?",
-        answer: "Uma extensão de linguagem do JavaScript"
-    }, {
-        question: "O React é __",
-        answer: "Uma biblioteca JavaScript para construção de interfaces"
-    }, {
-        question: "Componentes devem iniciar com __",
-        answer: "Letra maiúscula"
-    }, {
-        question: "Podemos colocar __ dentro do JSX",
-        answer: "Expressões"
-    }, {
-        question: "O ReactDOM nos ajuda __ ",
-        answer: "Interagindo com a DOM para colocar componentes React na mesma"
-    }, {
-        question: "Usamos o npm para __",
-        answer: "Gerenciar os pacotes necessários e suas dependências"
-    }, {
-        question: "Usamos props para __",
-        answer: "Passar diferentes informações para componentes"
-    }, {
-        question: "Usamos estado (state) para __",
-        answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
-    }]
+    const [pageStatus, setPageStatus] = useState("initial")
     const [numCompleted, setNumCompleted] = useState(0)
     const [statusIcons, setStatusIcon] = useState([])
+    const [deckSelected, setDeckSelected] = useState([])
+    const [notRememberAmount, setNotRememberAmount] = useState(0)
+    const zapFinished = false
     return (
         <>
-            <Header />
-            <main>
-                {/* <InitialPage /> */}
-                <Deck
-                    deck={deck}
-                    updateNumCompleted={numCompletedUpdated => setNumCompleted(numCompletedUpdated + numCompleted)}
-                    updateStatusIcon={updateStatusIcon => setStatusIcon([...statusIcons, updateStatusIcon])}
+            {pageStatus === "initial"
+                ? <InitialPage
+                    pageStatus={updatedPageStatus => setPageStatus(updatedPageStatus)}
+                    deckSelected={upadetedDeckSelected => setDeckSelected(upadetedDeckSelected)}
                 />
-            </main>
-            <Footer
-                numQuestions={deck.length}
-                numCompleted={numCompleted}
-                statusIcons={statusIcons}
-            />
+                : <>
+                    <Header />
+                    <main>
+                        <Deck
+                            deck={deckSelected}
+                            updateNumCompleted={numCompletedUpdated => setNumCompleted(numCompletedUpdated + numCompleted)}
+                            updateStatusIcon={updateStatusIcon => setStatusIcon([...statusIcons, updateStatusIcon])}
+                            updateNotRememberAmount={updateNotRememberAmount => {
+                                setNotRememberAmount(updateNotRememberAmount + notRememberAmount)
+                            }}
+                        />
+                    </main>
+                    <Footer
+                        numQuestions={deckSelected.length}
+                        numCompleted={numCompleted}
+                        statusIcons={statusIcons}
+                        zapFinished={numCompleted === deckSelected.length ? !zapFinished : zapFinished}
+
+                        notRememberAmount={notRememberAmount}
+                    />
+                </>
+            }
         </>
     )
 }

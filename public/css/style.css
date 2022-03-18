@@ -32,6 +32,51 @@ main {
     margin-top: 90px;
 }
 
+.initial-page input {
+    width: 171px;
+    height: 31px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 40px;
+    border: 1px solid #D70900;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 11px;
+    color: #FB6B6B;
+}
+
+.initial-page input::placeholder {
+    color: #ADADAD;
+    padding: 7px;
+}
+
+.initial-page textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.initial-page select {
+    width: 171px;
+    height: 31px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #D70900;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 11px;
+    color: #ADADAD;
+    text-align: center;
+    padding: 7px;
+}
+
+.initial-page select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 .title {
     font-family: 'Righteous';
     width: auto;
@@ -46,8 +91,8 @@ main {
 
 .initial-page button {
     font-family: 'Recursive';
-    margin-top: 70px;
-    width: 141px;
+    margin-top: 5px;
+    width: 171px;
     height: 31px;
     font-weight: 400;
     font-size: 12px;
@@ -58,6 +103,11 @@ main {
     border: 1px solid #D70900;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
+}
+
+.disabled {
+    background: #E8E8E8 !important;
+    color: #C0C0C0 !important;
 }
 
 header {
@@ -111,12 +161,41 @@ footer p {
     color: #333333;
 }
 
-.status-icon{
+.zap-end {
+    position: absolute;
+    width: 100%;
+    height: 145px;
+    bottom: 0;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.15);
+    padding-top: 13px;
+}
+
+.zap-end .title {
+    display: flex;
+    /* justify-content: center; */
+    /* text-align: center; */
+    font-weight: 700;
+}
+
+.zap-end .title img {
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+}
+
+.zap-end p {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.status-icon {
     display: flex;
     margin-top: 5px;
 }
 
-.status-icon img{
+.status-icon img {
     width: 16px;
     height: 16px;
     margin-right: 5px;
@@ -255,7 +334,7 @@ footer p {
     padding: 13px 13px 13px 6px;
 }
 
-.not-remember p{
+.not-remember p {
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
@@ -274,7 +353,7 @@ footer p {
     padding: 13px 13px 13px 6px;
 }
 
-.almost-not-remember p{
+.almost-not-remember p {
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
@@ -293,7 +372,7 @@ footer p {
     padding: 13px 13px 13px 6px;
 }
 
-.zap p{
+.zap p {
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
