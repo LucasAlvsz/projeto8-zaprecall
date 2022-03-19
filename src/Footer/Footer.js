@@ -1,5 +1,5 @@
 import StatusIcons from "./StatusIcons"
-export default function Footer({ numQuestions, numCompleted, statusIcons, zapFinished, zapAmount, goal }) {
+export default function Footer({ numQuestions, numCompleted, statusIcons, zapFinished, zapAmount, goal, reestart }) {
     return (
         <footer className={zapFinished ? "zap-end" : ""}>
             {zapFinished
@@ -31,6 +31,7 @@ export default function Footer({ numQuestions, numCompleted, statusIcons, zapFin
                     )
                 }) : ""}
             </div>
+            {zapFinished ? <button /*onClick={() => reestart(true)}*/>Reiniciar Recall</button> : ""}   
         </footer>
     )
 }

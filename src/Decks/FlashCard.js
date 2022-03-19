@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function Flashcard({ questionNum, question, answer, updateNumCompleted, updateStatusIcon, updateZapAmount}) {
+export default function Flashcard({ questionNum, question, answer, updateNumCompleted, updateStatusIcon, updateZapAmount, reestart, updateReestart }) {
     function checkStatus(status) {
         if (status === "flash-card") {
             return (
@@ -80,6 +80,12 @@ export default function Flashcard({ questionNum, question, answer, updateNumComp
         }
     }
     const [flashCardStatus, setFlashCardStatus] = useState("flash-card")
+    console.log(reestart, "aa");
+    if (reestart) {
+        console.log("aaaa");
+        setFlashCardStatus("flash-card")
+        updateReestart(false)
+    }
 
     return (
         <div className={flashCardStatus} onClick={() => {
@@ -89,7 +95,6 @@ export default function Flashcard({ questionNum, question, answer, updateNumComp
         }
         }>
             {checkStatus(flashCardStatus)}
-
         </div>
     )
 }

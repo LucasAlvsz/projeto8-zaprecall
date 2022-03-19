@@ -162,6 +162,21 @@ footer p {
     color: #333333;
 }
 
+footer button {
+    width: 151px;
+    height: 51px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Recursive';
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 14px;
+    margin-bottom: 12px;
+}
+
 .zap-end {
     position: absolute;
     width: 100%;
@@ -173,22 +188,23 @@ footer p {
 }
 
 .zap-end .title {
+    height: 18px;
     display: flex;
-    /* justify-content: center; */
-    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
     font-weight: 700;
 }
 
 .zap-end .title img {
     width: 18px;
     height: 18px;
-    margin-right: 7px;
+    margin-right: 5px;
 }
 
 .zap-end p {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 9px;
 }
 
 .status-icon {
@@ -333,6 +349,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
+    pointer-events: none;
 }
 
 .not-remember p {
@@ -352,6 +369,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
+    pointer-events: none;
 }
 
 .almost-not-remember p {
@@ -371,6 +389,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
+    pointer-events: none;
 }
 
 .zap p {

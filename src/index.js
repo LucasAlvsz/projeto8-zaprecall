@@ -10,8 +10,14 @@ function App() {
     const [statusIcons, setStatusIcon] = useState([])
     const [goalAndDeck, setGoalAndDeck] = useState({})
     const [zapAmount, setZapAmount] = useState(0)
-    const zapFinished = false
-    { console.log(goalAndDeck.deck) }
+    let zapFinished = false
+    const [reestart, setReestart] = useState(false)
+    if (reestart) {
+        // setNumCompleted(0)
+        // setStatusIcon([])
+        // setZapAmount(0)
+        // zapFinished = false
+    }
     return (
         <>
             {pageStatus === "initial"
@@ -27,6 +33,10 @@ function App() {
                             updateNumCompleted={numCompletedUpdated => setNumCompleted(numCompletedUpdated + numCompleted)}
                             updateStatusIcon={updateStatusIcon => setStatusIcon([...statusIcons, updateStatusIcon])}
                             updateZapAmount={updateZapAmount => setZapAmount(updateZapAmount + zapAmount)}
+                            reestart={reestart}
+                            updateReestart={updateReestart => {
+                                console.log(updateReestart);
+                                setReestart(updateReestart)}}
                         />
                     </main>
                     <Footer
@@ -36,6 +46,7 @@ function App() {
                         zapFinished={numCompleted === goalAndDeck.deck.length ? !zapFinished : zapFinished}
                         zapAmount={zapAmount}
                         goal={goalAndDeck.goal}
+                        // reestart={updateReestart => setReestart(updateReestart)}
                     />
                 </>
             }
