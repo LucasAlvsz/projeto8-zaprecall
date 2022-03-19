@@ -105,9 +105,10 @@ main {
     border-radius: 5px;
 }
 
-.disabled {
+.disabled-button {
     background: #E8E8E8 !important;
     color: #C0C0C0 !important;
+    pointer-events: none;
 }
 
 header {

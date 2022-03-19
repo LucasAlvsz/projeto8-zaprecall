@@ -8,35 +8,34 @@ function App() {
     const [pageStatus, setPageStatus] = useState("initial")
     const [numCompleted, setNumCompleted] = useState(0)
     const [statusIcons, setStatusIcon] = useState([])
-    const [deckSelected, setDeckSelected] = useState([])
-    const [notRememberAmount, setNotRememberAmount] = useState(0)
+    const [goalAndDeck, setGoalAndDeck] = useState({})
+    const [zapAmount, setZapAmount] = useState(0)
     const zapFinished = false
+    { console.log(goalAndDeck.deck) }
     return (
         <>
             {pageStatus === "initial"
                 ? <InitialPage
                     pageStatus={updatedPageStatus => setPageStatus(updatedPageStatus)}
-                    deckSelected={upadetedDeckSelected => setDeckSelected(upadetedDeckSelected)}
+                    goalAndDeck={(updatedGoal, updatedDeck) => setGoalAndDeck({ goal: updatedGoal, deck: updatedDeck })}
                 />
                 : <>
                     <Header />
                     <main>
                         <Deck
-                            deck={deckSelected}
+                            deck={goalAndDeck.deck}
                             updateNumCompleted={numCompletedUpdated => setNumCompleted(numCompletedUpdated + numCompleted)}
                             updateStatusIcon={updateStatusIcon => setStatusIcon([...statusIcons, updateStatusIcon])}
-                            updateNotRememberAmount={updateNotRememberAmount => {
-                                setNotRememberAmount(updateNotRememberAmount + notRememberAmount)
-                            }}
+                            updateZapAmount={updateZapAmount => setZapAmount(updateZapAmount + zapAmount)}
                         />
                     </main>
                     <Footer
-                        numQuestions={deckSelected.length}
+                        numQuestions={goalAndDeck.deck.length}
                         numCompleted={numCompleted}
                         statusIcons={statusIcons}
-                        zapFinished={numCompleted === deckSelected.length ? !zapFinished : zapFinished}
-
-                        notRememberAmount={notRememberAmount}
+                        zapFinished={numCompleted === goalAndDeck.deck.length ? !zapFinished : zapFinished}
+                        zapAmount={zapAmount}
+                        goal={goalAndDeck.goal}
                     />
                 </>
             }

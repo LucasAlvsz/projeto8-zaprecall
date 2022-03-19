@@ -1,9 +1,9 @@
 import StatusIcons from "./StatusIcons"
-export default function Footer({ numQuestions, numCompleted, statusIcons, zapFinished, notRememberAmount }) {
+export default function Footer({ numQuestions, numCompleted, statusIcons, zapFinished, zapAmount, goal }) {
     return (
         <footer className={zapFinished ? "zap-end" : ""}>
             {zapFinished
-                ? notRememberAmount > 0
+                ? zapAmount >= goal
                     ? <>
                         <div className="title">
                             <img src="./imgs/parabens.png" />

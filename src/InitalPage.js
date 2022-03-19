@@ -1,4 +1,5 @@
-export default function InitialPage({ pageStatus, deckSelected }) {
+import { useState } from "react"
+export default function InitialPage({ pageStatus, goalAndDeck }) {
     const decks = [{
         name: "JSX1",
         deck: [{
@@ -30,7 +31,7 @@ export default function InitialPage({ pageStatus, deckSelected }) {
     }, {
         name: "JSX2",
         deck: [{
-            question: "O que é JSX?",
+            question: "O que é JSXx?",
             answer: "Uma extensão de linguagem do JavaScript"
         }, {
             question: "O React é __",
@@ -57,23 +58,33 @@ export default function InitialPage({ pageStatus, deckSelected }) {
         ]
     }
     ]
+    const [goalStatus, setGoalStatus] = useState("")
+    const [deckStatus, setDeckStatus] = useState("")
     return (
         <div className="initial-page">
             <img src="imgs/favicon.ico" />
             <h1 className="title">ZapRecall</h1>
-            <input type="number" placeholder="Digite sua meta de zaps..."></input>
-            <select placeholder="eoq">
+            <input type="number" placeholder="Digite sua meta de zaps..."
+                onChange={goal => setGoalStatus(goal.target.value)}
+            />
+            <select onChange={deck => setDeckStatus(decks[deck.target.value].deck)}>
                 <option defaultValue> Escolha seu deck</option>
                 {decks.map((deck, key) => {
-                    return (
-                        <option value={deck.deck} key={key}>{deck.name}</option>
-                    )
+                    return <option value={key} key={key}> {deck.name} </option>
                 })}
             </select>
-            <button onClick={() => {
-                pageStatus("not-inital")
-                deckSelected(decks[0].deck)
-            }}>
+
+            <button
+                className={goalStatus !== ""
+                    ? deckStatus !== ""
+                        ? ""
+                        : "disabled-button"
+                    : "disabled-button"
+                }
+                onClick={() => {
+                    pageStatus("not-inital")
+                    goalAndDeck(goalStatus, deckStatus.sort(() => Math.random() - 0.5))
+                }}>
                 Iniciar Reacall!
             </button>
         </div>

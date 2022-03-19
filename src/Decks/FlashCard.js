@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function Flashcard({ questionNum, question, answer, updateNumCompleted, updateStatusIcon, updateNotRememberAmount}) {
+export default function Flashcard({ questionNum, question, answer, updateNumCompleted, updateStatusIcon, updateZapAmount}) {
     function checkStatus(status) {
         if (status === "flash-card") {
             return (
@@ -28,7 +28,6 @@ export default function Flashcard({ questionNum, question, answer, updateNumComp
                         <button onClick={(e) => {
                             e.stopPropagation()
                             updateNumCompleted(1)
-                            updateNotRememberAmount(1)
                             updateStatusIcon("./imgs/notRemember.svg")
                             setFlashCardStatus("not-remember")
                         }}>
@@ -45,6 +44,7 @@ export default function Flashcard({ questionNum, question, answer, updateNumComp
                         <button onClick={(e) => {
                             e.stopPropagation()
                             updateNumCompleted(1)
+                            updateZapAmount(1)
                             updateStatusIcon("./imgs/zap.svg")
                             setFlashCardStatus("zap")
                         }}>
