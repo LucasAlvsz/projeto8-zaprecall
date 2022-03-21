@@ -54,13 +54,13 @@ export default function InitialPage({ pageStatus, goalAndDeck }) {
         <div className="initial-page">
             <img src="imgs/favicon.ico" />
             <h1 className="title">ZapRecall</h1>
-            <select onChange={deck => setDeckStatus(decks[deck.target.value].deck)}>
-                <option selected disabled > Escolha seu deck</option>
+            <select required onChange={deck => setDeckStatus(decks[deck.target.value].deck)}>
+                <option value="" selected disabled > Escolha seu deck</option>
                 {decks.map((deck, key) => {
                     return <option value={key} key={key}> {deck.name} {" - " + deck.deck.length + " Cards"}</option>
                 })}
             </select>
-            <input type="number" min="1" placeholder="Digite sua meta de zaps..."
+            <input type="number" min="1" max={deckStatus.length} placeholder="Digite sua meta de zaps..."
                 onChange={goal => setGoalStatus(goal.target.value)}
             />
             {inputChoicesValidation(goalStatus, deckStatus)}

@@ -67,12 +67,24 @@ main {
     font-weight: 400;
     font-size: 13px;
     line-height: 11px;
-    color: #ADADAD;
+    color: #FB6B6B;
     text-align: center;
     padding: 7px;
     margin-top: 40px;
 }
+.initial-page select:invalid {
+    color: #ADADAD;
+}
 
+.initial-page option{
+    color: #FB6B6B;
+    font-family: 'Recursive'
+}
+
+.initial-page option:disabled{
+    color: #ADADAD;
+    font-family: 'Roboto'
+}
 .initial-page select:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
@@ -482,6 +494,7 @@ footer button {
         height: 50px;
         font-size: 18px;
         line-height: 15px;
+        padding-left: 15px;
     }
     .initial-page select {
         width: 240px;
