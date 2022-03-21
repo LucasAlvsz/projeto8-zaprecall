@@ -29,11 +29,32 @@ export default function InitialPage({ pageStatus, goalAndDeck }) {
         }
         ]
     }, {
-        name: "JSX2",
+        name: "Starter-Pack - Driven",
         deck: [{
-            question: "O que é JSX?",
-            answer: "Uma extensão de linguagem do JavaScript"
-        }
+            question: "Qual é o instrutor da Driven conhecido pelo seu pulinho?",
+            answer: "Diegão!"
+        },{
+            question: "Recall",
+            answer: "Luana"
+        },{
+            question: "A melhor turma da Driven é a __",
+            answer: "Turma 5"
+        },{
+            question: "Qual o segundo maior desejo dos alunos da T5",
+            answer: "Cupom do Ifood"
+        },{
+            question: "Confia no __",
+            answer: "Processo"
+        },{
+            question: "Show de __",
+            answer: "Bolinhas"
+        },{
+            question: "Recording in __",
+            answer: "Progress"
+        },{
+            question: "Quem é a entidade mais temida logo após um exercício",
+            answer: "Ela... A...  R o l e t a 😱"
+        },
         ]
     }
     ]
