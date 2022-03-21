@@ -259,13 +259,13 @@ footer .title{
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
-    animation: closeFlashCard 0.5s 0.5s both;
+    animation: closeFlashCard 0.3s 0.3s both;
 }
 
 .flash-card img {
     width: 13px;
     height: 15px;
-    animation: closeFlashCardImg 0.8s 0.8s both;
+    animation: closeFlashCardImg 0.3s 0.3s both;
 }
 
 .flash-card p {
@@ -273,7 +273,7 @@ footer .title{
     font-size: 12px;
     line-height: 14px;
     color: #333333;
-    animation: closeFlashCardImg 0.8s 0.8s both;
+    animation: closeFlashCardImg 0.3s 0.3s both;
 }
 
 .opened-flash-card {
@@ -287,7 +287,7 @@ footer .title{
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 6px;
-    animation: openFlashCard 0.5s 0.5s both;
+    animation: openFlashCard 0.3s 0.3s both;
 }
 
 .opened-flash-card img {
@@ -296,7 +296,7 @@ footer .title{
     position: absolute;
     bottom: 8px;
     right: 7px;
-    animation: openFlashCardImg 0.8s 0.8s both;
+    animation: openFlashCardImg 0.3s 0.3s both;
 }
 
 .opened-flash-card p {
@@ -304,7 +304,7 @@ footer .title{
     font-size: 12px;
     line-height: 14px;
     color: #333333;
-    animation: openFlashCardImg 0.8s 0.8s both;
+    animation: openFlashCardImg 0.3s 0.3s both;
 }
 
 .turned-flash-card {
@@ -319,7 +319,7 @@ footer .title{
     height: 80px;
     background: #FFFFD5;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-    animation: openFlashCard 0.5s 0.5s both;
+    animation: openFlashCard 0.3s 0.3s both;
 }
 
 .turned-flash-card p {
@@ -329,7 +329,7 @@ footer .title{
     color: #333333;
     margin-top: 5px;
     margin-left: 6px;
-    animation: closeFlashCardImg 0.5s 0.5s both;
+    animation: closeFlashCardImg 0.3s 0.3s both;
 }
 
 .buttons {
@@ -339,7 +339,7 @@ footer .title{
     margin-top: 12px;
     margin-bottom: 3px;
     padding-left: 5px;
-    animation: closeFlashCardImg 0.5s 0.5s both;
+    animation: closeFlashCardImg 0.3s 0.3s both;
 }
 
 .buttons button {
