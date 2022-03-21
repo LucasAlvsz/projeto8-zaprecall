@@ -78,7 +78,7 @@ main {
 
 .initial-page option{
     color: #FB6B6B;
-    font-family: 'Recursive'
+    font-family: 'Recursive';
 }
 
 .initial-page option:disabled{
@@ -484,11 +484,7 @@ footer .title{
         transform: rotate(360deg);
     }
 }
-/* Works on Firefox */
-/* * {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(105, 103, 103) rgb(255, 255, 255, 0);
-} */
+
 
 /* Works on Chrome, Edge, Safari and OperaGx */
 *::-webkit-scrollbar {
