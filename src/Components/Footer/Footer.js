@@ -9,14 +9,14 @@ export default function Footer({ numQuestions, numCompleted, statusIcons, zapFin
                             <img src="./imgs/parabens.png" />
                             <p>PARABÉNS!</p>
                         </div>
-                        <p>Você não esqueceu de nenhum flashcard!</p>
+                        <p className="final-text">Você não esqueceu de nenhum flashcard!</p>
                     </>
                     : <>
                         <div className="title">
                             <img src="./imgs/sad.png" />
                             <p>PUTZ!</p>
                         </div>
-                        <p>Ainda faltaram alguns...
+                        <p className="final-text">Ainda faltaram alguns...
                             Mas não desanime!</p>
                     </>
                 : <p>{numCompleted}/{numQuestions} CONCLUÍDOS</p>

@@ -196,11 +196,15 @@ footer button {
     margin-top: 14px;
     margin-bottom: 12px;
 }
+footer .title{
+    position: absolute;
+    top: 15px;
+}
 
 .zap-end {
     position: absolute;
     width: 100%;
-    height: 145px;
+    height: 112px;
     bottom: 0;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.15);
@@ -480,7 +484,25 @@ footer button {
         transform: rotate(360deg);
     }
 }
+/* Works on Firefox */
+/* * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(105, 103, 103) rgb(255, 255, 255, 0);
+} */
 
+/* Works on Chrome, Edge, Safari and OperaGx */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #FB6B6B;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid #fff;
+}
 
 @media (min-width: 600px){
     .initial-page img {
@@ -640,11 +662,23 @@ footer button {
         height: 22px;
     }
 
-    .buttons{
+    .buttons button{
         min-height: 36px;
+        font-size: 18px;
     }
     .status-icon img{
         width: 18px;
         height: 18px;
+        margin-top: 10px;
+    }
+    .zap-end{
+        height: 142px;
+    }
+    .final-text{
+        margin-top: 30px !important;
+    }
+    footer .title{
+        position: absolute;
+        top: 20px;
     }
 }
