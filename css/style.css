@@ -10,13 +10,13 @@ body {
 
 main {
     width: 100%;
-    height: calc(100vh - 99px);
+    height: calc(100vh - 112px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 49px;
-    /* superior | horizontal | inferior */
+    margin-top: 59px;
     padding: 0 10px 0;
+    overflow: auto;
 }
 
 .initial-page {
@@ -37,7 +37,6 @@ main {
     height: 31px;
     background: #FFFFFF;
     border-radius: 5px;
-    margin-top: 40px;
     border: 1px solid #D70900;
     text-align: center;
     font-family: 'Roboto';
@@ -45,6 +44,7 @@ main {
     font-size: 13px;
     line-height: 11px;
     color: #FB6B6B;
+    margin-top: 5px;
 }
 
 .initial-page input::placeholder {
@@ -67,11 +67,24 @@ main {
     font-weight: 400;
     font-size: 13px;
     line-height: 11px;
-    color: #ADADAD;
+    color: #FB6B6B;
     text-align: center;
     padding: 7px;
+    margin-top: 40px;
+}
+.initial-page select:invalid {
+    color: #ADADAD;
 }
 
+.initial-page option{
+    color: #FB6B6B;
+    font-family: 'Recursive'
+}
+
+.initial-page option:disabled{
+    color: #ADADAD;
+    font-family: 'Roboto'
+}
 .initial-page select:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
@@ -105,9 +118,18 @@ main {
     border-radius: 5px;
 }
 
-.disabled {
+.disabled-button {
     background: #E8E8E8 !important;
     color: #C0C0C0 !important;
+    pointer-events: none;
+}
+
+.warning{
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    position: absolute;
+    top: 360px;
 }
 
 header {
@@ -136,7 +158,6 @@ header p {
     line-height: 25px;
     letter-spacing: -0.012em;
     color: #FFFFFF;
-    /* transform: rotate(0.58deg); */
     margin-left: 5px;
 
 }
@@ -161,10 +182,29 @@ footer p {
     color: #333333;
 }
 
+footer button {
+    width: 151px;
+    height: 51px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Recursive';
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 14px;
+    margin-bottom: 12px;
+}
+footer .title{
+    position: absolute;
+    top: 15px;
+}
+
 .zap-end {
     position: absolute;
     width: 100%;
-    height: 145px;
+    height: 112px;
     bottom: 0;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.15);
@@ -172,22 +212,23 @@ footer p {
 }
 
 .zap-end .title {
+    height: 18px;
     display: flex;
-    /* justify-content: center; */
-    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
     font-weight: 700;
 }
 
 .zap-end .title img {
     width: 18px;
     height: 18px;
-    margin-right: 7px;
+    margin-right: 5px;
 }
 
 .zap-end p {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 9px;
 }
 
 .status-icon {
@@ -210,6 +251,7 @@ footer p {
 
 .flash-card {
     width: auto;
+    max-width: 600px;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -236,6 +278,7 @@ footer p {
 
 .opened-flash-card {
     width: auto;
+    max-width: 600px;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -266,6 +309,7 @@ footer p {
 
 .turned-flash-card {
     width: auto;
+    max-width: 600px;
     min-height: 80px;
     display: flex;
     flex-direction: column;
@@ -332,6 +376,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
+    pointer-events: none;
 }
 
 .not-remember p {
@@ -351,6 +396,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
+    pointer-events: none;
 }
 
 .almost-not-remember p {
@@ -370,6 +416,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 13px 13px 13px 6px;
+    pointer-events: none;
 }
 
 .zap p {
@@ -435,5 +482,203 @@ footer p {
 
     to {
         transform: rotate(360deg);
+    }
+}
+/* Works on Firefox */
+/* * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(105, 103, 103) rgb(255, 255, 255, 0);
+} */
+
+/* Works on Chrome, Edge, Safari and OperaGx */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #FB6B6B;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid #fff;
+}
+
+@media (min-width: 600px){
+    .initial-page img {
+        width: 85px;
+        height: 95px;
+        margin-top: 90px;
+    }
+    
+    .initial-page input {
+        width: 240px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 15px;
+        padding-left: 15px;
+    }
+    .initial-page select {
+        width: 240px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 15px;
+    }
+    .title {
+        font-size: 35px;
+    }
+    
+    .initial-page button {
+        width: 240px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 15px;
+    }
+    .warning{
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        position: absolute;
+        top: 460px;
+    }
+    main{
+        height: calc(100vh - 181px);
+        margin-top: 106px;
+        margin-bottom: 20px;
+    }
+    header {
+        height: 46px;
+        margin-top: 40px;
+    }
+    
+    header img {
+        width: 40px;
+        height: 46px;
+    }
+    header p {
+        width: auto;
+        font-size: 32px;
+        line-height: 39.73px;
+        letter-spacing: -1.2%;
+        margin-left: 12px;
+    }
+    footer{
+        height: 75px;
+    }
+    footer p{
+        font-size: 20px;
+        line-height: 23px
+    }
+    .deck{
+        align-items: center;
+    }
+    .flash-card {
+        min-width: 600px;
+        height: 65px !important;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    .flash-card p{
+        font-size: 18px ;
+        line-height: 15px;
+        margin-left: 14px;
+    }
+    .flash-card img{
+        width: 19px;
+        height: 22px;
+    }
+    .opened-flash-card {
+        min-width: 600px;
+        height: 115px !important;
+        margin-bottom: 10px;
+    }
+    .opened-flash-card p{
+        font-size: 18px ;
+        line-height: 15px;
+        margin-left: 14px;
+        padding-top: 10px;
+    }
+    .opened-flash-card img{
+        width: 25px;
+        height: 20px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+    .turned-flash-card{
+        min-width: 600px;
+        height: 115px !important;
+        margin-bottom: 10px;
+    }
+    .turned-flash-card p{
+        font-size: 18px ;
+        line-height: 15px;
+        margin-left: 14px;
+        padding-top: 10px;
+    }
+    .not-remember{
+        min-width: 600px;
+        height: 65px !important;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    .not-remember p{
+        font-size: 18px ;
+        line-height: 15px;
+        margin-left: 14px;
+    }
+    .not-remember img{
+        width: 22px;
+        height: 22px;
+    }
+    .almost-not-remember{
+        min-width: 600px;
+        height: 65px !important;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    .almost-not-remember p{
+        font-size: 18px;
+        line-height: 15px;
+        margin-left: 14px;
+    }
+    .almost-not-remember img{
+        width: 22px;
+        height: 22px;
+    }
+    .zap{
+        min-width: 600px;
+        height: 65px !important;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    .zap p{
+        font-size: 18px ;
+        line-height: 15px;
+        margin-left: 14px;
+    }
+    .zap img{
+        width: 22px;
+        height: 22px;
+    }
+
+    .buttons button{
+        min-height: 36px;
+        font-size: 18px;
+    }
+    .status-icon img{
+        width: 18px;
+        height: 18px;
+        margin-top: 10px;
+    }
+    .zap-end{
+        height: 142px;
+    }
+    .final-text{
+        margin-top: 30px !important;
+    }
+    footer .title{
+        position: absolute;
+        top: 20px;
     }
 }
