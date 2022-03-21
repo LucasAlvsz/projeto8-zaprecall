@@ -31,7 +31,6 @@ export default function Footer({ numQuestions, numCompleted, statusIcons, zapFin
                     )
                 }) : ""}
             </div>
-            {zapFinished ? <button /*onClick={() => reestart(true)}*/>Reiniciar Recall</button> : ""}   
         </footer>
     )
 }

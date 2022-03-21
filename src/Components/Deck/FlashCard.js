@@ -80,7 +80,7 @@ export default function Flashcard({ questionNum, question, answer, updateNumComp
         }
     }
     const [flashCardStatus, setFlashCardStatus] = useState("flash-card")
-    console.log(reestart, "aa");
+ 
     if (reestart) {
         console.log("aaaa");
         setFlashCardStatus("flash-card")

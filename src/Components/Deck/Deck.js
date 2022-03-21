@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Flashcard from "./FlashCard"
 export default function Deck({ deck, updateNumCompleted, updateStatusIcon, updateZapAmount, reestart, updateReestart }) {
     return (

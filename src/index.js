@@ -1,9 +1,9 @@
 import { render } from "react-dom";
 import { useState } from "react"
-import InitialPage from "./InitalPage";
-import Header from "./Header";
-import Footer from "./Footer/Footer";
-import Deck from "./Decks/Deck"
+import InitialPage from "./Components/InitalPage/InitalPage";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Deck from "./Components/Deck/Deck"
 function App() {
     const [pageStatus, setPageStatus] = useState("initial")
     const [numCompleted, setNumCompleted] = useState(0)
@@ -11,13 +11,7 @@ function App() {
     const [goalAndDeck, setGoalAndDeck] = useState({})
     const [zapAmount, setZapAmount] = useState(0)
     let zapFinished = false
-    const [reestart, setReestart] = useState(false)
-    if (reestart) {
-        // setNumCompleted(0)
-        // setStatusIcon([])
-        // setZapAmount(0)
-        // zapFinished = false
-    }
+
     return (
         <>
             {pageStatus === "initial"
@@ -33,10 +27,6 @@ function App() {
                             updateNumCompleted={numCompletedUpdated => setNumCompleted(numCompletedUpdated + numCompleted)}
                             updateStatusIcon={updateStatusIcon => setStatusIcon([...statusIcons, updateStatusIcon])}
                             updateZapAmount={updateZapAmount => setZapAmount(updateZapAmount + zapAmount)}
-                            reestart={reestart}
-                            updateReestart={updateReestart => {
-                                console.log(updateReestart);
-                                setReestart(updateReestart)}}
                         />
                     </main>
                     <Footer
@@ -46,7 +36,6 @@ function App() {
                         zapFinished={numCompleted === goalAndDeck.deck.length ? !zapFinished : zapFinished}
                         zapAmount={zapAmount}
                         goal={goalAndDeck.goal}
-                        // reestart={updateReestart => setReestart(updateReestart)}
                     />
                 </>
             }
